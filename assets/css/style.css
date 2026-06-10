@@ -667,24 +667,23 @@ footer {
     display: flex; /* Exibe a barra apenas no mobile */
   }
 
-  /* Oculta os menus de navegação do topo no mobile */
-  .nav-pill-menu, .nav-actions #user-btn span {
+  /* Oculta os menus de navegação do topo e ações (sacola/login) no mobile */
+  .nav-pill-menu, .nav-actions {
     display: none !important;
-  }
-  
-  .pill-badge-btn {
-    padding: 10px;
-    border-radius: 50%;
   }
 
   .pill-nav-container {
-    height: 70px;
-    padding: 0 20px;
+    height: 70px !important;
+    padding: 0 20px !important;
+    justify-content: center !important;
   }
 
-  /* Ajusta a logo para centralizar */
+  /* Ajusta a logo para centralizar e ter margem flexível */
   .logo {
     font-size: 20px;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
   }
 
   /* Catálogo e Vitrines Mobile: Grid de 2 Colunas super limpo */
