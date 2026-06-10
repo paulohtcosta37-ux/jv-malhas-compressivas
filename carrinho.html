@@ -253,9 +253,8 @@
   <!-- Header Premium -->
   <header id="main-header">
     <div class="container pill-nav-container">
-      <a href="./index.html" class="logo">
-        JV MALHAS
-        <span>Compressivas</span>
+      <a href="./index.html" class="logo" style="display: flex; align-items: center; height: 65px; padding: 5px 0;">
+        <img src="./assets/images/logo.svg" alt="Juliana Veloso Logo" style="height: 100%; width: auto;">
       </a>
       
       <!-- Menu de Navegação Pílula -->
@@ -526,5 +525,26 @@
     // Escuta mudanças de carrinho disparadas por outros componentes
     window.addEventListener("cartUpdated", updateCartUI);
   </script>
+
+  <!-- App-like Bottom Tab Bar for Mobile -->
+  <div class="mobile-tab-bar">
+    <a href="./index.html" class="mobile-tab-item ">
+      <i class="fa-solid fa-house"></i>
+      <span>Início</span>
+    </a>
+    <a href="./produtos.html" class="mobile-tab-item ">
+      <i class="fa-solid fa-shapes"></i>
+      <span>Coleção</span>
+    </a>
+    <a href="./carrinho.html" class="mobile-tab-item active">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span>Carrinho</span>
+      <span class="badge">0</span>
+    </a>
+    <a href="./login.html" class="mobile-tab-item ">
+      <i class="fa-solid fa-user"></i>
+      <span>Conta</span>
+    </a>
+  </div>
 </body>
 </html>

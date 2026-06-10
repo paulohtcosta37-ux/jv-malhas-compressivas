@@ -591,7 +591,7 @@ footer {
   color: var(--color-error);
 }
 
-/* Responsividade */
+/* Responsividade e Mobile-First Optimizations */
 @media (max-width: 992px) {
   .hero {
     height: auto;
@@ -609,16 +609,189 @@ footer {
   }
 }
 
+/* Barra de Navegação Inferior Fixa para Dispositivos Móveis (estilo App Nativo) */
+.mobile-tab-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: rgba(253, 251, 247, 0.95);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--color-border);
+  box-shadow: 0 -4px 16px rgba(45, 37, 32, 0.05);
+  z-index: 999;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mobile-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  width: 20%;
+  height: 100%;
+  transition: var(--transition);
+  position: relative;
+}
+
+.mobile-tab-item i {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.mobile-tab-item.active {
+  color: var(--color-gold);
+}
+
+.mobile-tab-item .badge {
+  top: 6px;
+  right: calc(50% - 18px);
+}
+
 @media (max-width: 768px) {
-  .nav-menu {
-    display: none; /* Em projetos reais usaríamos um menu hambúrguer */
+  body {
+    padding-bottom: 70px; /* Evita que a barra inferior cubra o conteúdo */
   }
+
+  .mobile-tab-bar {
+    display: flex; /* Exibe a barra apenas no mobile */
+  }
+
+  /* Oculta os menus de navegação do topo no mobile */
+  .nav-pill-menu, .nav-actions #user-btn span {
+    display: none !important;
+  }
+  
+  .pill-badge-btn {
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .pill-nav-container {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  /* Ajusta a logo para centralizar */
+  .logo {
+    font-size: 20px;
+  }
+
+  /* Catálogo e Vitrines Mobile: Grid de 2 Colunas super limpo */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    margin-bottom: 40px;
+  }
+
+  .product-card {
+    border-radius: var(--radius-sm);
+  }
+
+  .product-info {
+    padding: 12px !important;
+  }
+
+  .product-name {
+    font-size: 14px !important;
+    height: 38px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .product-price {
+    font-size: 14px !important;
+  }
+  
+  .product-price-original {
+    font-size: 11px !important;
+  }
+
+  .product-tag {
+    font-size: 9px !important;
+    padding: 2px 6px !important;
+    top: 10px !important;
+    left: 10px !important;
+  }
+
+  /* Layouts e Grids */
+  .catalog-layout, .detail-grid, .cart-grid, .checkout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-top: 30px !important;
+  }
+
+  .filter-sidebar {
+    padding: 20px !important;
+  }
+
+  .info-panel, .cart-items-panel, .summary-panel, .form-panel, .checkout-summary-panel {
+    padding: 20px !important;
+    border-radius: var(--radius-md) !important;
+  }
+
+  .info-name {
+    font-size: 24px !important;
+  }
+
+  .sizes-grid {
+    gap: 8px !important;
+  }
+
+  .size-btn {
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+  }
+
+  .cart-item-row {
+    grid-template-columns: 70px 1fr !important;
+    gap: 16px !important;
+    position: relative;
+    padding: 16px 0 !important;
+  }
+
+  .cart-item-img {
+    width: 70px !important;
+    height: 90px !important;
+  }
+
+  .qty-controls {
+    grid-column: 2;
+    margin-top: 8px;
+    width: fit-content;
+  }
+
+  .item-price-col {
+    grid-column: 2;
+    text-align: left !important;
+    margin-top: 8px;
+    font-size: 14px !important;
+  }
+
+  .btn-remove {
+    position: absolute;
+    top: 16px;
+    right: 0;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
+  
   .footer-bottom {
     flex-direction: column;
     gap: 16px;
     text-align: center;
   }
 }
+
